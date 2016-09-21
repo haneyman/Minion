@@ -1,0 +1,2 @@
+grammar fruit;
+public <fruitTypes> = (apple | orange | grape);
