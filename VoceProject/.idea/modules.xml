@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/Voce.iml" filepath="$PROJECT_DIR$/Voce.iml" />
       <module fileurl="file://$PROJECT_DIR$/../voce-0.9.1/samples/recognitionTest/recognitionTest.iml" filepath="$PROJECT_DIR$/../voce-0.9.1/samples/recognitionTest/recognitionTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/../voce-0.9.1/samples/synthesisTest/synthesisTest.iml" filepath="$PROJECT_DIR$/../voce-0.9.1/samples/synthesisTest/synthesisTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../voce-0.9.1/src/java/voce/voce.iml" filepath="$PROJECT_DIR$/../voce-0.9.1/src/java/voce/voce.iml" />
     </modules>
   </component>
 </project>
