@@ -34,17 +34,17 @@ public class Main {
             while (voce.SpeechInterface.getRecognizerQueueSize() > 0)
             {
                 String s = voce.SpeechInterface.popRecognizedString();
-
                 // Check if the string contains 'quit'.
                 if (-1 != s.indexOf("quit"))
                 {
-                    quit = true;
+                    //quit = true;
                 } else if (-1 != s.indexOf("hello world")) {
                     System.out.println("hello back at you.");
                     voce.SpeechInterface.synthesize("well hello to you too beautiful!");
                 } else if (-1 != s.indexOf("weather")) {
-                    System.out.println(ServiceWeather.get());
-                    //voce.SpeechInterface.synthesize("well hello to you too beautiful!");
+                    speakWeather();
+                } else if (-1 != s.indexOf("giants")) {
+                    System.out.println("giants");
                 }
 
                 System.out.println("You said: " + s);
@@ -59,4 +59,8 @@ public class Main {
 
     }
 
+    private static void speakWeather() {
+        String result = ServiceWeather.getWeatherFromWeatherUnderground();
+        voce.SpeechInterface.synthesize(result);
+    }
 }

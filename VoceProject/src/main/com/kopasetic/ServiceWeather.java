@@ -1,5 +1,8 @@
 package com.kopasetic;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -19,6 +22,7 @@ public class ServiceWeather {
         try {
             String result = convertStreamToString(conn.getInputStream());
             System.out.println(result);
+            return result;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,7 +54,8 @@ public class ServiceWeather {
         }
         try {
             String result = convertStreamToString(conn.getInputStream());
-            System.out.println(result);
+            System.out.println("Weather underground results: " + result);
+            return(parseJson(result));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -58,4 +63,25 @@ public class ServiceWeather {
 
     }
 
+    public static String parseJson(String json) {
+/*
+        JSONParser jsonParser = new JSONParser();
+        JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+*/
+        String result = "";
+        JSONParser parser = new JSONParser();
+        Object obj = null;
+        try {
+            obj = parser.parse(json);
+            JSONObject jsonObject = (JSONObject) obj;
+            JSONObject currentObservation = (JSONObject) jsonObject.get("current_observation");
+            result = "the weather is " + (String) currentObservation.get("weather")
+                    + " temperature is " + currentObservation.get("temp_f") + " degrees"
+                    + " with wind of " + currentObservation.get("wind_mph") + " m p h";
+            System.out.println("Parsed result: " + result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }

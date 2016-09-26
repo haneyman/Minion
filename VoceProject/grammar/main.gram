@@ -1,3 +1,5 @@
+#JSGF V1.0 ISO8859-1 en_Uk;
 grammar main;
 public <miscellaneous> = (quit);
 public <simple> = weather ;
+public <giants> = giants ;
