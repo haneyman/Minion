@@ -5,7 +5,6 @@
 VoceProject/.idea
 VoceProject/out
 # Package Files #
-*.jar
 *.war
 *.ear
 

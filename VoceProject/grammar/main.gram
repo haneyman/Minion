@@ -1,5 +1,12 @@
 #JSGF V1.0 ISO8859-1 en_Uk;
 grammar main;
 public <miscellaneous> = (quit);
-public <simple> = weather ;
+public <weather> = weather <location> ;
+public <weatherforecast> = forecast <location> ;
+public <location> = (home | tahoe | northstar | heavenly | truckee | concord | walnut creek | san francisco);
 public <giants> = giants ;
+public <greet> = (good morning | hello) ( minion  );
+public <show> = show;
+public <repeat> = repeat;
+public <exit> = exit;
+public <fun> = you suck;
