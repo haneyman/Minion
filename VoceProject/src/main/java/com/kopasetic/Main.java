@@ -1,12 +1,7 @@
 package com.kopasetic;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-
 //import org.apache.log4j.Logger;
-
+import voce.*;
 // api doco:  http://voce.sourceforge.net/api/java/classvoce_1_1_speech_interface.html
 // http://cmusphinx.sourceforge.net/doc/sphinx4/edu/cmu/sphinx/jsgf/JSGFGrammar.html
 
@@ -25,7 +20,7 @@ public class Main {
             e.printStackTrace();
         }
     }
-
+    //voce reference: http://voce.sourceforge.net/api/java/_speech_interface_8java-source.html
     public Main() {
         serviceWeather = new ServiceWeather();
         desktopUtil = new DesktopUtil();
